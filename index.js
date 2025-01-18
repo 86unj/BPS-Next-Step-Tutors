@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 
+const defineAssociations = require('./model/Association');
+
 dotenv.config();
 
 const PORT = process.env.HTTP_PORT || 8080;
@@ -27,6 +29,8 @@ app.get('/', (req, res, next) => {
     message: 'This is the test',
   });
 });
+
+defineAssociations();
 
 app.listen(PORT, () => {
   console.log(`Server is listening on ${PORT}`);

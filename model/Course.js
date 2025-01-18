@@ -12,10 +12,11 @@ const Course = sequelize.define(
       field: 'course_id',
       primaryKey: true,
     },
-    course_name: {
+    courseName: {
       type: Sequelize.STRING(255),
       allowNull: false,
       field: 'course_name',
+      unique: true,
     },
     description: {
       type: Sequelize.STRING(255),

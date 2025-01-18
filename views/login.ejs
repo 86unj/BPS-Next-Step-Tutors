@@ -15,18 +15,22 @@
           Next<br />Steps<br />Tutors
         </div>
     
-        <form class="flex flex-col space-y-2 w-full px-4">
+        <form action="/api/login" method="post" class="flex flex-col space-y-2 w-full px-4">
           <label class="form-label text-black">username</label>
           <input
             type="email"
             placeholder="abc@myseneca.ca"
             class="form-input"
+            id="userId"
+            name="userId"
           />
     
           <label class="form-label text-black">password</label>
           <input
             type="password"
             class="form-input"
+            id="password"
+            name="password"
           />
 
           <a href="#" class="forgot-link mt-2 self-end pr-4">

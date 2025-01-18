@@ -10,6 +10,7 @@ const defineAssociations = require('./model/Association');
 const PORT = process.env.HTTP_PORT || 8080;
 
 const courseRouter = require('./router/CourseRouter');
+const userRouter = require('./router/UserRouter');
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(path.dirname(require.main.filename), 'public'))
 
 // router
 app.use(courseRouter);
+app.use(userRouter);
 
 app.get('/', (req, res, next) => {
   res.render('index', {

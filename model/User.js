@@ -6,8 +6,7 @@ const User = sequelize.define(
   'user',
   {
     userId: {
-      type: Sequelize.INTEGER,
-      autoIncrement: true,
+      type: Sequelize.STRING(255),
       allowNull: false,
       field: 'user_id',
       primaryKey: true,
@@ -39,7 +38,7 @@ const User = sequelize.define(
       type: Sequelize.STRING,
       field: 'profile_image',
     },
-    createAt: {
+    createdAt: {
       type: Sequelize.DATE,
       field: 'created_at',
       defaultValue: Sequelize.DataTypes.NOW,

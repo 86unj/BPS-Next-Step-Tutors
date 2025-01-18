@@ -13,7 +13,7 @@ const Availability = sequelize.define(
       primaryKey: true,
     },
     userId: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING(255),
       allowNull: false,
       field: 'user_id',
       references: {

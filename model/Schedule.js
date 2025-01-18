@@ -20,7 +20,7 @@ const Schedule = sequelize.define(
       },
     },
     tutorId: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING(255),
       field: 'tutor_id',
       references: {
         model: 'user',
@@ -28,7 +28,7 @@ const Schedule = sequelize.define(
       },
     },
     tuteeId: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING(255),
       field: 'tutee_id',
       references: {
         model: 'user',

@@ -6,7 +6,7 @@ const UserCourse = sequelize.define(
   'usercourse',
   {
     userId: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING(255),
       field: 'user_id',
       references: {
         model: 'user',

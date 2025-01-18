@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/styles.css"/> 
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>    
+    <div class="container flex items-center justify-center w-[1200px] h-[720px] py-[148px]">
+      <div class="card w-[325px] h-[424px]">
+        <div class="card-title text-black text-center mb-8">
+          Next<br />Steps<br />Tutors
+        </div>
+    
+        <form class="flex flex-col space-y-2 w-full px-4">
+          <label class="form-label text-black">username</label>
+          <input
+            type="email"
+            placeholder="abc@myseneca.ca"
+            class="form-input"
+          />
+    
+          <label class="form-label text-black">password</label>
+          <input
+            type="password"
+            class="form-input"
+          />
+
+          <a href="#" class="forgot-link mt-2 self-end pr-4">
+            forgot password/ID
+          </a>
+      
+          <div class="flex justify-between w-full mt-8 px-4">
+            <button class="button flex w-[72px] h-[26px] rounded-[5px] button-gray">
+              <a href="/signup">Sign Up</a>
+            </button>
+      
+            <button class="button flex w-[72px] h-[26px] rounded-[5px] button-green">
+              Log In
+            </button>
+        </div>
+    
+        
+        </div>
+      </div>
+    </div>
+      
+  </body>
+</html>

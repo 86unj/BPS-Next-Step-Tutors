@@ -7,9 +7,11 @@ const path = require('path');
 
 const defineAssociations = require('./model/Association');
 
-dotenv.config();
-
 const PORT = process.env.HTTP_PORT || 8080;
+
+const courseRouter = require('./router/CourseRouter');
+
+dotenv.config();
 
 app.use(express.json());
 
@@ -23,6 +25,9 @@ app.set('views', 'views');
 
 // public folder
 app.use(express.static(path.join(path.dirname(require.main.filename), 'public')));
+
+// router
+app.use(courseRouter);
 
 app.get('/', (req, res, next) => {
   res.render('index', {

@@ -5,19 +5,23 @@ const sequelize = require('../util/db');
 const UserCourse = sequelize.define(
   'usercourse',
   {
-    user_id: {
+    userId: {
       type: Sequelize.INTEGER,
+      field: 'user_id',
       references: {
         model: 'user',
         key: 'user_id',
       },
+      primaryKey: true,
     },
-    course_id: {
+    courseId: {
       type: Sequelize.INTEGER,
+      field: 'course_id',
       references: {
         model: 'course',
         key: 'course_id',
       },
+      primaryKey: true,
     },
   },
   {

@@ -5,19 +5,23 @@ const sequelize = require('../util/db');
 const UserBadge = sequelize.define(
   'userbadge',
   {
-    user_id: {
+    userId: {
       type: Sequelize.INTEGER,
+      field: 'user_id',
       references: {
         model: 'user',
         key: 'user_id',
       },
+      primaryKey: true,
     },
-    badge_id: {
+    badgeId: {
       type: Sequelize.INTEGER,
+      field: 'badge_id',
       references: {
         model: 'badge',
         key: 'badge_id',
       },
+      primaryKey: true,
     },
   },
   {

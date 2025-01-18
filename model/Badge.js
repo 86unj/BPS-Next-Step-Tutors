@@ -5,15 +5,17 @@ const sequelize = require('../util/db');
 const Badge = sequelize.define(
   'badge',
   {
-    badge_id: {
+    badgeId: {
       type: Sequelize.INTEGER,
       autoIncrement: true,
       allowNull: false,
+      fieldName: 'badge_id',
       primaryKey: true,
     },
-    badge_name: {
+    badgeName: {
       type: Sequelize.STRING(255),
       allowNull: false,
+      fieldName: 'badge_name',
     },
     description: {
       type: Sequelize.STRING(255),

@@ -5,23 +5,27 @@ const sequelize = require('../util/db');
 const User = sequelize.define(
   'user',
   {
-    user_id: {
+    userId: {
       type: Sequelize.INTEGER,
       autoIncrement: true,
       allowNull: false,
+      field: 'user_id',
       primaryKey: true,
     },
-    student_id: {
+    studentId: {
       type: Sequelize.STRING(10),
       allowNull: false,
+      field: 'student_id',
       unique: true,
     },
-    user_name: {
+    userName: {
       type: Sequelize.STRING(255),
+      field: 'user_name',
       allowNull: false,
     },
-    role_id: {
+    roleId: {
       type: Sequelize.INTEGER,
+      field: 'role_id',
       references: {
         model: 'role',
         key: 'role_id',
@@ -31,15 +35,18 @@ const User = sequelize.define(
       type: Sequelize.STRING(255),
       allowNull: false,
     },
-    profile_image: {
+    profileImage: {
       type: Sequelize.STRING,
+      field: 'profile_image',
     },
-    created_at: {
+    createAt: {
       type: Sequelize.DATE,
+      field: 'created_at',
       defaultValue: Sequelize.DataTypes.NOW,
     },
-    updated_at: {
+    updatedAt: {
       type: Sequelize.DATE,
+      field: 'update_at',
       defaultValue: Sequelize.DataTypes.NOW,
     },
     rating: {

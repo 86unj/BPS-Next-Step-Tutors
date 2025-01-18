@@ -5,31 +5,36 @@ const sequelize = require('../util/db');
 const Availability = sequelize.define(
   'availability',
   {
-    availability_id: {
+    availabilityId: {
       type: Sequelize.INTEGER,
       autoIncrement: true,
       allowNull: false,
+      field: 'availability_id',
       primaryKey: true,
     },
-    user_id: {
+    userId: {
       type: Sequelize.INTEGER,
       allowNull: false,
+      field: 'user_id',
       references: {
         model: 'user',
         key: 'user_id',
       },
     },
-    day_of_week: {
+    dayOfWeek: {
       type: Sequelize.STRING(3),
       allowNull: false,
+      field: 'day_of_week',
     },
-    start_time: {
+    startTime: {
       type: Sequelize.DATE,
       allowNull: false,
+      field: 'start_time',
     },
-    end_time: {
+    endTime: {
       type: Sequelize.DATE,
       allowNull: false,
+      field: 'end_time',
     },
   },
   {

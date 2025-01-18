@@ -5,28 +5,31 @@ const sequelize = require('../util/db');
 const Schedule = sequelize.define(
   'schedule',
   {
-    schedule_id: {
+    scheduleId: {
       type: Sequelize.INTEGER,
       autoIncrement: true,
       allowNull: false,
+      field: 'schedule_id',
       primaryKey: true,
     },
-    course_id: {
+    courseId: {
       type: Sequelize.INTEGER,
       references: {
         model: 'course',
         key: 'course_id',
       },
     },
-    tutor_id: {
+    tutorId: {
       type: Sequelize.INTEGER,
+      field: 'tutor_id',
       references: {
         model: 'user',
         key: 'user_id',
       },
     },
-    tutee_id: {
+    tuteeId: {
       type: Sequelize.INTEGER,
+      field: 'tutee_id',
       references: {
         model: 'user',
         key: 'user_id',
@@ -40,12 +43,14 @@ const Schedule = sequelize.define(
       type: Sequelize.STRING(10),
       allowNull: false,
     },
-    start_time: {
+    startTime: {
       type: Sequelize.DATE,
+      field: 'start_time',
       allowNull: false,
     },
-    end_time: {
+    endTime: {
       type: Sequelize.DATE,
+      field: 'end_time',
       allowNull: false,
     },
   },

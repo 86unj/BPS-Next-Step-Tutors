@@ -13,7 +13,8 @@ const defineAssociations = () => {
   Availability.belongsTo(User, { foreignKey: 'user_id' });
 
   // User - Role
-  User.hasOne(Role, { foreignKey: 'role_id' });
+  User.belongsTo(Role, { foreignKey: 'role_id' });
+  Role.hasMany(User, { foreignKey: 'role_id' });
 
   // User - UserBadge - Badge
   User.hasMany(UserBadge, { foreignKey: 'user_id' });

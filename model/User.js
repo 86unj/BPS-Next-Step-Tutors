@@ -55,6 +55,9 @@ const User = sequelize.define(
         max: 10.0,
       },
     },
+    introduction: {
+      type: Sequelize.TEXT,
+    },
   },
   {
     freezeTableName: true,

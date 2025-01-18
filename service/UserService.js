@@ -75,3 +75,52 @@ exports.loginUser = async (userId, password) => {
   console.log(token);
   return token;
 };
+
+exports.updateUserProfile = async (
+  userId,
+  password,
+  passwordConfirm,
+  userName,
+  introduction,
+  profileImagePath
+) => {
+  if (!userId || !password || !passwordConfirm || !userName) {
+    return Utils.createError(400, 'SIGNUP001');
+  }
+
+  if (!Utils.validateEmail(userId)) {
+    return Utils.createError(412, 'SIGNUP004');
+  }
+
+  if (!Utils.validatePassword(password)) {
+    return Utils.createError(412, 'SIGNUP005');
+  }
+
+  if (password !== passwordConfirm) {
+    return Utils.createError(412, 'SIGNUP003');
+  }
+
+  const user = await User.findOne({ where: { userId: userId } });
+
+  if (user) {
+    return Utils.createError(412, 'SIGNUP002');
+  }
+
+  const hashedPassword = await bcrypt.hash(password, 12);
+
+  await User.update(
+    {
+      password: hashedPassword,
+      userName: userName,
+      profileImage: profileImagePath,
+      introduction: introduction,
+    },
+    {
+      where: {
+        userId: userId,
+      },
+    }
+  );
+
+  return Utils.createSuccess();
+};

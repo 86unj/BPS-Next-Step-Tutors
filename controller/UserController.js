@@ -40,3 +40,23 @@ exports.logoutUser = (req, res, next) => {
   res.clearCookie('token');
   return res.redirect(303, '/');
 };
+
+exports.updateUserProfile = async (req, res, next) => {
+  const { userId, password, passwordConfirm, userName, introduction } = req.body;
+  const profileImagePath = req.file.path.split('public')[1];
+
+  const result = await userService.updateUserProfile(
+    userId,
+    password,
+    passwordConfirm,
+    userName,
+    introduction,
+    profileImagePath
+  );
+
+  if (result.status === 200) {
+    return res.redirect(303, '/');
+  } else {
+    return res.status(result.status).json(result);
+  }
+};
